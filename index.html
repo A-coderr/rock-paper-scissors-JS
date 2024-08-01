@@ -8,7 +8,15 @@
         <button onclick="gameLogic('rock')">Rock</button>
         <button onclick="gameLogic('paper')">Paper</button>
         <button onclick="gameLogic('scissors')">Scissors</button>
+        <button onclick="score.wins = 0; score.losses = 0; score.ties = 0;">Reset Score</button>
         <script>
+
+            //Score Object
+            const score = {
+                wins: 0,
+                losses: 0,
+                ties: 0
+            };
 
             //Function that calculates computer move
             function computerMoveLogic(){
@@ -44,10 +52,10 @@
                 //Result Logic
                 if(playerMove === 'scissors') {
                     if(computerMove === 'rock') {
-                        result = 'You lose!!!';
+                        result = 'You lose.';
                     } 
                     else if(computerMove === 'paper') {
-                        result = 'You win!!!';
+                        result = 'You win.';
                     } 
                     else if(computerMove === 'scissors') {
                         result = 'Tie';
@@ -76,7 +84,18 @@
                     }
                 }
 
-                alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+                if(result === 'You win.'){
+                    score.wins += 1;
+                }
+                else if(result === 'You lose.'){
+                    score.losses += 1;
+                }
+                else if(result === 'Tie.'){
+                    score.ties += 1;
+                }
+
+                alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+                Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
             }
 
             
