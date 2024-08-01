@@ -8,7 +8,8 @@
         <button onclick="gameLogic('rock')">Rock</button>
         <button onclick="gameLogic('paper')">Paper</button>
         <button onclick="gameLogic('scissors')">Scissors</button>
-        <button onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('score')">Reset Score</button>
+        <p class="js-score"></p>
+        <button onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('score'); updateScore();">Reset Score</button>
         <script>
 
             //Score Object
@@ -16,7 +17,9 @@
                 wins: 0,
                 losses: 0,
                 ties: 0
-            }; 
+            };
+            
+            updateScore();
 
             //Function that calculates computer move
             function computerMoveLogic(){
@@ -97,8 +100,14 @@
                 //Converts score into the JSON string and saves it into the local storage
                 localStorage.setItem('score', JSON.stringify(score));
 
+                updateScore();
+
                 alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
                 Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+            }
+
+            function updateScore(){
+                document.querySelector('.js-score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
             }
 
             
