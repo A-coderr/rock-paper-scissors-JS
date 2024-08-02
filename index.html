@@ -2,12 +2,22 @@
 <html>
     <head>
         <title>Rock Paper Scissors JS</title>
+        <style>
+            body{
+                background-color: rgb(52, 52, 52);
+                color: white;
+                font-family: 'Courier New', Courier, monospace;
+            }
+        </style>
     </head>
     <body>
-        <p>Rock Paper Scissors</p>
+        <h1>Rock Paper Scissors</h1>
         <button onclick="gameLogic('rock')">Rock</button>
         <button onclick="gameLogic('paper')">Paper</button>
         <button onclick="gameLogic('scissors')">Scissors</button>
+        <p style="font-size:100px">&#9995;</p>
+        <p style="font-size:100px">&#9994;</p>
+        <p style="font-size:100px">&#9996;</p>
         <p class="game-result"></p>
         <p class="game-moves"></p>
         <p class="game-score"></p>
