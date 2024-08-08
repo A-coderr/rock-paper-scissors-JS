@@ -17,11 +17,42 @@
                 padding: 20px;
                 margin-right: 30px;
             }
+
+            .user-button:hover {
+                background-color: lightgray;
+            }
+
+            .game-result{
+                font-size: 25px;
+                font-weight: bold;
+                margin-top: 50px;
+            }
+
+            .move-icon{
+                
+            }
+
+            .game-score{
+                margin-top: 60px;
+            }
+
+            .reset-score{
+                background-color: transparent;
+                border: 3px solid white; 
+                border-radius: 50%; 
+                color: white;
+                padding: 10px;
+            }
+            .reset-score:hover {
+                background-color: lightgray;
+            }
+
         </style>
     </head>
     <body>
         <div style="max-width: fit-content; margin-left: auto; margin-right: auto; text-align: center;">
             <h1>Rock Paper Scissors</h1>
+            <br>
 
             <div style="display: flex;">
                 <button class="user-button" onclick="gameLogic('rock')">&#9994;</button>
@@ -29,10 +60,15 @@
                 <button class="user-button"onclick="gameLogic('scissors')">&#9996;</button>
             </div>
 
-            <p class="game-result"></p>
-            <p class="game-moves"></p>
+            <p class="game-result">You win</p>
+            <div style="display: flex; font-size: 25px;">
+                <p class="game-moves">You</p> 
+                <p class="move-icon">&#9994;</p>
+                <p class="move-icon">&#9994;</p> 
+                <p>Computer</p>
+            </div>           
             <p class="game-score"></p>
-            <button onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('score'); updateScore();">Reset Score</button>
+            <button class="reset-score" onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('score'); updateScore();">Reset Score</button>
         </div>
         
         <script>
