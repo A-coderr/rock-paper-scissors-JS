@@ -8,16 +8,25 @@
                 color: white;
                 font-family: 'Courier New', Courier, monospace;
             }
+
+            .user-button{
+                font-size:100px; 
+                border: 3px solid white; 
+                border-radius: 50%; 
+                background-color: transparent; 
+                padding: 20px;
+                margin-right: 30px;
+            }
         </style>
     </head>
     <body>
         <div style="max-width: fit-content; margin-left: auto; margin-right: auto; text-align: center;">
             <h1>Rock Paper Scissors</h1>
 
-            <div style="display: flex; justify-content: space-between; max-width: 50%;">
-                <button onclick="gameLogic('rock')" style="font-size:100px; border: 3px solid white; border-radius: 50%; background-color: transparent;">&#9994;</button>
-                <button onclick="gameLogic('paper')" style="font-size:100px; border: 3px solid white; border-radius: 50%; background-color: transparent;">&#9995;</button>
-                <button onclick="gameLogic('scissors')" style="font-size:100px; border: 3px solid white; border-radius: 50%; background-color: transparent;">&#9996;</button>
+            <div style="display: flex;">
+                <button class="user-button" onclick="gameLogic('rock')">&#9994;</button>
+                <button class="user-button"onclick="gameLogic('paper')">&#9995;</button>
+                <button class="user-button"onclick="gameLogic('scissors')">&#9996;</button>
             </div>
 
             <p class="game-result"></p>
