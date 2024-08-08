@@ -11,17 +11,21 @@
         </style>
     </head>
     <body>
-        <h1>Rock Paper Scissors</h1>
-        <button onclick="gameLogic('rock')">Rock</button>
-        <button onclick="gameLogic('paper')">Paper</button>
-        <button onclick="gameLogic('scissors')">Scissors</button>
-        <p style="font-size:100px">&#9995;</p>
-        <p style="font-size:100px">&#9994;</p>
-        <p style="font-size:100px">&#9996;</p>
-        <p class="game-result"></p>
-        <p class="game-moves"></p>
-        <p class="game-score"></p>
-        <button onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('score'); updateScore();">Reset Score</button>
+        <div style="max-width: fit-content; margin-left: auto; margin-right: auto; text-align: center;">
+            <h1>Rock Paper Scissors</h1>
+
+            <div style="display: flex; justify-content: space-between; max-width: 50%;">
+                <button onclick="gameLogic('rock')" style="font-size:100px; border: 3px solid white; border-radius: 50%; background-color: transparent;">&#9994;</button>
+                <button onclick="gameLogic('paper')" style="font-size:100px; border: 3px solid white; border-radius: 50%; background-color: transparent;">&#9995;</button>
+                <button onclick="gameLogic('scissors')" style="font-size:100px; border: 3px solid white; border-radius: 50%; background-color: transparent;">&#9996;</button>
+            </div>
+
+            <p class="game-result"></p>
+            <p class="game-moves"></p>
+            <p class="game-score"></p>
+            <button onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('score'); updateScore();">Reset Score</button>
+        </div>
+        
         <script>
 
             //Score Object
