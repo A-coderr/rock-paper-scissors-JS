@@ -8,7 +8,6 @@ A simple Rock Paper Scissors game implemented in JavaScript. This game allows us
 - [Usage](#usage)
 - [How It Works](#how-it-works)
 - [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Features
@@ -43,12 +42,16 @@ To run this game locally, follow these steps:
 - The user interacts with buttons to make their selection.
 - The computer’s choice is generated randomly using JavaScript’s Math.random() function.
 - The winner is determined based on the classic rules of Rock Paper Scissors:
- Rock crushes Scissors
- Scissors cut Paper
- Paper covers Rock
+ 1. Rock crushes Scissors
+ 2. Scissors cut Paper
+ 3. Paper covers Rock
 - The result is updated and displayed after each round.
 
 ## Technologies Used
 - HTML
 - CSS
 - JavaScript
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
