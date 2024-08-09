@@ -16,10 +16,11 @@
                 background-color: transparent; 
                 padding: 20px;
                 margin-right: 30px;
+                transition-duration: 0.7s;
             }
 
             .user-button:hover {
-                background-color: lightgray;
+                background-color: white;
             }
 
             .game-result{
@@ -28,40 +29,43 @@
                 margin-top: 50px;
             }
 
-            .move-icon{
-                
-            }
-
             .game-score{
                 margin-top: 60px;
             }
 
             .reset-score{
                 background-color: transparent;
-                border: 3px solid white; 
-                border-radius: 50%; 
+                border: 2px solid white;
                 color: white;
-                padding: 10px;
+                font-family: 'Courier New', Courier, monospace;
+                text-align: center;
+                font-size: 20px;
+                padding: 20px;
+                transition-duration: 0.7s;
+                margin-top: 40px;
             }
+
             .reset-score:hover {
-                background-color: lightgray;
+                background-color: white;
+                color: black;
+                border: 2px solid rgb(52, 52, 52);;
             }
 
         </style>
     </head>
     <body>
-        <div style="max-width: fit-content; margin-left: auto; margin-right: auto; text-align: center;">
+        <div style="width: 70%; margin-left: auto; margin-right: auto; text-align: center; ">
             <h1>Rock Paper Scissors</h1>
             <br>
 
-            <div style="display: flex;">
+            <div style="display: flex; justify-content: center;">
                 <button class="user-button" onclick="gameLogic('rock')">&#9994;</button>
                 <button class="user-button"onclick="gameLogic('paper')">&#9995;</button>
                 <button class="user-button"onclick="gameLogic('scissors')">&#9996;</button>
             </div>
 
             <p class="game-result">You win</p>
-            <div style="display: flex; font-size: 25px;">
+            <div style="display: flex; font-size: 25px; justify-content: center;">
                 <p class="game-moves">You</p> 
                 <p class="move-icon">&#9994;</p>
                 <p class="move-icon">&#9994;</p> 
