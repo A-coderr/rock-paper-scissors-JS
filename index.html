@@ -66,10 +66,7 @@
 
             <p class="game-result">You win</p>
             <div style="display: flex; font-size: 25px; justify-content: center;">
-                <p class="game-moves">You</p> 
-                <p class="move-icon">&#9994;</p>
-                <p class="move-icon">&#9994;</p> 
-                <p>Computer</p>
+                <p class="game-moves"></p>
             </div>           
             <p class="game-score"></p>
             <button class="reset-score" onclick="score.wins = 0; score.losses = 0; score.ties = 0; localStorage.removeItem('score'); updateScore();">Reset Score</button>
@@ -113,7 +110,10 @@
 
             function gameLogic(playerMove){
 
-                const computerMove = computerMoveLogic();
+                let computerMove = computerMoveLogic();
+                const rockIcon = '&#9994;';
+                const paperIcon = '&#9995;';
+                const scissorsIcon = '&#9996;';
 
                 let result = '';
 
@@ -121,35 +121,47 @@
                 if(playerMove === 'scissors') {
                     if(computerMove === 'rock') {
                         result = 'You lose.';
+                        computerMove = rockIcon;
                     } 
                     else if(computerMove === 'paper') {
                         result = 'You win.';
+                        computerMove = paperIcon;
                     } 
                     else if(computerMove === 'scissors') {
                         result = 'Tie.';
+                        computerMove = scissorsIcon;
                     }
+                    playerMove = scissorsIcon;
                 } 
                 else if(playerMove === 'paper') {
                     if(computerMove === 'rock') {
                         result = 'You win.';
+                        computerMove = rockIcon;
                     }
                     else if(computerMove === 'paper') {
                         result = 'Tie.';
+                        computerMove = paperIcon;
                     } 
                     else if(computerMove === 'scissors') {
                         result = 'You lose.';
-                    }                        
+                        computerMove = scissorsIcon;
+                    }  
+                    playerMove = paperIcon;                      
                 } 
                 else if (playerMove === 'rock') {
                     if(computerMove === 'rock') {
                         result = 'Tie.';
+                        computerMove = rockIcon;
                     } 
                     else if(computerMove === 'paper') {
                         result = 'You lose.';
+                        computerMove = paperIcon;
                     } 
                     else if(computerMove === 'scissors') {
                         result = 'You win.';
+                        computerMove = scissorsIcon;
                     }
+                    playerMove = rockIcon;
                 }
 
                 if(result === 'You win.'){
